@@ -1,0 +1,27 @@
+name: Licenses check correct
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.x"
+      - name: Check for licenses
+        run: |
+          python -m pip install --upgrade pip
+          cd good-weather
+          pip install .
+          pip install license_scanner
+          python -m license_scanner.cli -m whitelist

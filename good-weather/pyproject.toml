@@ -1,0 +1,27 @@
+[project]
+name = "good-weather"
+version = "0.0.1"
+dependencies = [
+  "setuptools ~= 65.6.3",
+  "wheel",
+  "pillow ~= 10.0.0",
+  "numpy ~= 1.24.3",
+]
+
+[tool.license_scanner]
+allowed-licenses = [
+  "MIT",
+  "apache software license",
+  "apache software license v2",
+  "apache software license v3",
+  "BSD 3-clause license",
+  "BSD 2-clause license",
+  "BSD 0-clause license",
+  'GNU lesser general public license',
+  'GNU lesser general public license v2',
+  'GNU lesser general public license v3',
+  'Python software foundation license',
+  'Mozilla public license 2.0 (mpl 2.0)',
+  'mozilla',
+]
+allowed-packages = ["pillow"]
